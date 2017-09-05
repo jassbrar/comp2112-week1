@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title></title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+   
+<script>
+// 1 - var can be reassigned without showing any error
+// var height = 100;
+// console.log(height);
+// var height = 200;  // does this line show any error?  
+// console.log(height);  
+
+// 2 - var are function scoped or global scoped.  let are block scoped
+// 2a - type winner in the console -- will it be false or true?
+// 2b - change "let" to "var" -- what happens if you type winner in console now?
+// 2c - change "let points" to "const points", then later, try to reassign points--what happens?
+// let points = 50;
+// let winner = false;  // scoped to window
+
+// if (points > 40) {
+//    console.log("entered if");
+//    let winner = true; // scoped in block
+// }
+
+// 3 - is const really immutable? 
+// 3a - in console type: person = {name: 'Bob'} -- what happens?
+// 3b - then type: person.name = 'Omega' -- what happens?
+// const person = {
+//    name: 'Alpha',
+//    age: 123
+// }
+// 3c - What does Object.freeze() do?  
+// Try typing: me.age, then type me.age = 345; then type me.age again -- what happens?
+// const me = Object.freeze(person);
+
+// 4 - replacing the IIFE 
+// refer to 2010 article: http://benalman.com/news/2010/11/immediately-invoked-function-expression/
+// refer to http://exploringjs.com/es6/ch_core-features.html#sec_from-iifes-to-blocks
+// 4a - Try typing: name -- can you access it globally?
+//   var name = 'alpha'; 
+// 4b - move it inside an IIFE -- can you still access it?
+// (function() {
+//    var name = 'alpha'; 
+// })();
+// 4c - Change Try typing: name -- can you access it globally?
+// const name = 'beta';
+// 4d - Simply put it inside a block using { } brackets -- can you still access it?
+// {
+//    const name = 'beta';
+// }
+
+// 5 - var in for loops
+// 5a - type: i  -- did variable leak out globally?
+// for (var i = 0; i < 10; i++) {
+//    console.log(i);
+// }
+// 5b - now run the following: -- what happens? //all of them are 10!
+// 5c - change "var" to "let" -- what happens now?
+// for (var i = 0; i< 10; i++) {
+//    setTimeout(function() {
+//       console.log(`The number is ${i}`);
+//    }, 1000);
+// }
+
+// 6 - temporal dead zone
+// 6a - now try reversing the 2 lines below so that console is first statement -- what will console.log(pizza) say?
+// 6b - change var to let/const -- what will console.log(pizza) say now?
+console.log(pizza);
+let pizza = "Deep dish"; 
+
+
+</script>
+   </body>
+</html>

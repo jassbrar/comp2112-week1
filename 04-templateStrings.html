@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title></title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <body>
+
+
+<script>
+// 1 - old way of concatenating strings
+// var name = "Popcorn";
+// var age = 10;
+// var sentence = 'My cat ' + name + " is " + age + " years old";
+// console.log(sentence);
+
+// 2 - new ES6 way - template literals
+// 2b - notice it can be a variable, or run a function, or run straight javascript
+// function myFn() {
+//    console.log("I am called inside myFn");
+// };
+// const name = "Popcorn";
+// const age = 10;
+// const sentence = `My cat ${name} is ${myFn()} years old`;
+// console.log(sentence);
+
+// 3 - Creating HTML fragments with template
+// 3a - if you tried having multilines, editor will complain.  You'd fix it by appending a \ after each line
+// var text = "hello there,
+// how are you
+// ";
+
+// 3b - Instead use template strings.  Run it, then inspect it -- notice it's now proper HTML, Type: snippet
+// const book = {
+//    title: 'ABC book',
+//    author: 'Dr. Seuss',
+//    year: '1980',
+//    about: 'Learn the alphabet'
+// };
+// const snippet = `
+//    <div class="book">
+//       <h2>${book.title}</h2>
+//       <p class="author">${book.author}</p>
+//       <p class="year">${book.year}</p>
+//       <p class="about">${book.about}</p>
+//    </div>
+// `;
+// document.body.innerHTML = snippet;
+
+// 3c - you can nest templates inside each other
+// const cats = [
+//    {name: 'Tuffy', age: 2},
+//    {name: 'Popcorn', age: 3},
+//    {name: 'Jetta', age: 4}
+// ];
+// const snippet = `
+//    <ul class="cats">
+//       ${cats.map(cat => `<li>${cat.name} is ${cat.age}</li>`).join('')}
+//    </ul>
+// `;
+// document.body.innerHTML = snippet;
+
+// 3d - Using ternary operators within template strings.
+// What if album doesn't exist?  Comment out album and see what happens.
+// const music = {
+//    name: 'Popsicle Toes',
+//    artist: 'Diana Krall',
+//    album: 'Jazz'
+// }
+// const snippet = `
+//    <div class="song">
+//       <p>
+//          ${music.name} - ${music.artist}
+//          ${music.album ? `(Album: ${music.album})` : ''}
+//       </p>
+//    </div>
+// `;
+// document.body.innerHTML = snippet;
+
+// 3e - create own render function if too many ternary statements
+// const college = {
+//    name: 'Georgian College',
+//    population: 10000,
+//    campuses: ['Barrie', 'Orillia', 'Owen Sound', 'Muskoka', 'Orangeville', 'Midland', 'South Georgian Bay']
+// }
+// const snippet = `
+//    <div class="college">
+//       <h2>${college.name}</h2>
+//       <p>Our FTE is ${college.population} students</p>
+//       ${renderCampuses(college.campuses)}
+//    </div>
+// `;
+// function renderCampuses(campuses) {
+//    return `
+//       <ul>
+//          ${campuses.map(campus => `<li>${campus}</li>`)}
+//       </ul>
+//    `;
+// }
+// document.body.innerHTML = snippet;
+
+// 3f - tagged template literals.  Look at debugger's tab on right side called "Scope"
+// Using ... rest operator
+function highlight(str, ...values) {
+   debugger;
+}
+const name = "Georgian College";
+const age = 50;
+const sentence = highlight`My school is ${name} and is ${age} years old`;
+console.log(sentence);
+
+</script>
+   </body>
+</html>
