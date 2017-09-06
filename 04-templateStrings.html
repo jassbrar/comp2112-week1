@@ -4,6 +4,9 @@
       <title></title>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+         .hl { background-color: yellow; }
+      </style>
    </head>
    <body>
 
@@ -102,13 +105,31 @@
 
 // 3f - tagged template literals.  Look at debugger's tab on right side called "Scope"
 // Using ... rest operator
-function highlight(str, ...values) {
-   debugger;
-}
-const name = "Georgian College";
-const age = 50;
-const sentence = highlight`My school is ${name} and is ${age} years old`;
-console.log(sentence);
+// function highlight(str, ...values) {
+//    debugger;
+// }
+// const name = "Georgian College";
+// const age = 50;
+// const sentence = highlight`My school is ${name} and is ${age} years old ${city}`;
+// console.log(sentence);
+
+// 3g - tagged template literals.  Note the console produces undefined because it strings array is always 1 more than values array.
+// 3h - to solve that, try changing values[i] to (values[i] || '')
+// 3i - change es5 to es6 for string concatenation >${values[i] || ''}<
+// 3j - add an attribute of contenteditable in span tag -- what happens?
+// function highlight(strings, ...values) {
+//    let str = '';
+//    strings.forEach((string, i) => {
+//       // str += string + values[i]; // es5 concat
+//       str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
+//    });
+//    return str;
+// }
+// const name = "Georgian College";
+// const age = 50;
+// const sentence = highlight`My school is ${name} and is ${age} years old`;
+// document.body.innerHTML = sentence;
+
 
 </script>
    </body>

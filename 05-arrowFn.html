@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title></title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+   
+<script>
+// 1 - Arrow functions are: more concise, implicit returns, doesn't rebind value of this inside of another fn
+// refer to: https://medium.com/javascript-scene/familiarity-bias-is-holding-you-back-its-time-to-embrace-arrow-functions-3d37e1a9bb75
+// 1a - to append 'College' to each word below using regular functions 
+const colleges = ['Georgian', 'Seneca', 'Centennial'];
+// const fullnames = colleges.map(function(college) {
+//    return `${college} College`;
+// });
+
+// 1b - transform regular function to arrow function.  After each step below, run it to test if it still works
+// Steps: i)Delete word function, Insert =>, 
+// ii) If only one parameter, then no need for parenthesis ();  if no parameters, then pass empty parenthesis ()
+// iii) no need to type return if it implicitly returns; allows all on one line; delete curly brackets {}
+// const fullnames = colleges.map(college => `${college} College`);
+// console.log(fullnames);
+
+// 1c - arrow fn are always anonymous, unless you assign them; Named function example:
+// function greet(saying) {
+//    console.log(saying);
+// }
+// greet('Aloha');
+
+// 1d - Assigned function example:
+// const greet = (saying) => { console.log(saying) }
+// greet('Aloha');
+
+// 1e - Implicit return an object literal.  
+// Must wrap object with parenthesis to pass an object literal, not a function block;
+// 1f - place is zero based.  How to make it 1 based?
+// 1g - race: race is redundant; new ES6 way is to replace it with one word--race,
+// const race = '100m Dash';
+// const winners = ['Usain Bolt', 'Andre De Grasse', 'Justin Gatlin'];
+// const win = winners.map((winner, i) => ({name: winner, race: race, place: i+1}));
+// console.table(win);
+
+// 1g - get all scores greater or equal to 30.  Compare using an if vs. no if
+const scores = [12,23,34,45,13,24,35,46,14,25,36,47];
+// const a = scores.filter(score => {      
+//    if (score > 30) {   
+//       return true;
+//    }
+// });
+// console.log(a);
+// const top = scores.filter(score => score >= 30);
+// console.log(a);
+
+// 1h
+
+
+</script>
+</body>
+</html>
